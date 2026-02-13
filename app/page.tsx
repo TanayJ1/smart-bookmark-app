@@ -1,5 +1,8 @@
 'use client'
 
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 import { useEffect, useState, useRef } from 'react'
 import { supabase, type Bookmark } from '@/lib/supabase'
 import { Auth } from '@supabase/auth-ui-react'
