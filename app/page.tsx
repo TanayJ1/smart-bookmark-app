@@ -4,12 +4,13 @@ export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
 import { useEffect, useState, useRef } from 'react'
-import { supabase, type Bookmark } from '@/lib/supabase'
+import { getSupabase, type Bookmark } from '@/lib/supabase'
 import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 import type { User } from '@supabase/supabase-js'
 
 export default function Home() {
+  const supabase = getSupabase() 
   const [user, setUser] = useState<User | null>(null)
   const [bookmarks, setBookmarks] = useState<Bookmark[]>([])
   const [url, setUrl] = useState('')
